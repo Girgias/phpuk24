@@ -1,0 +1,7 @@
+ARG_ENABLE('rationals', 'rationals support', 'no');
+
+if (PHP_RATIONALS != 'no') {
+	AC_DEFINE('HAVE_RATIONALS', 1, 'rationals support enabled');
+
+	EXTENSION('rationals', 'rationals.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
